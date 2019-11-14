@@ -1,7 +1,11 @@
-from modal import ComDy
+from modal import Person
 
 # 创建表，如果存在不会重复创建
-ComDy.create_table()
+Person.create_table()
 
-dy = ComDy(tags="xx", user_id="xx", v_url="xx", user_url="xx", size=12211)
-print(dy.save())
+# insert
+Person(name="ggg", sex="1", age=12).save()
+
+# query get 返回查询结果集中的第一个
+p = Person.get((Person.name == "ggg") & (Person.sex == "1"))
+print(p.name, p.sex, p.age)

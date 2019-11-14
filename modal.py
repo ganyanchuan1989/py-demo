@@ -13,12 +13,10 @@ class BaseModel(Model):
         database = database
 
 
-class ComDy(BaseModel):
-    tags = CharField()
-    user_id = CharField()
-    user_url = CharField()
-    v_url = CharField()
-    v_size = IntegerField(default=0)
+class Person(BaseModel):
+    name = CharField()
+    sex = CharField()
+    age = IntegerField(default=0)
 
     class Meta:
-        table_name = 'com_dy'
+        table_name = 'com_person'
